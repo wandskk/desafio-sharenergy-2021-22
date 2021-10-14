@@ -101,17 +101,17 @@ A aplicação criada para o desafio pode ser aprimorada com recursos pensados po
 
 - Utilizar MaterialUI
 - Ao invés de apenas um front-end, utilizar um backend para o CRUD
-* Documentação
-* Responsividade
-* Contas de usuário
-  * Proteção contras modificações de pessoas não autorizadas
+- Documentação
+- Responsividade
+- Contas de usuário
+  - Proteção contras modificações de pessoas não autorizadas
 - Em relação ao gerenciamento de clientes:
   - Permitir que o usuário adicione ou delete clientes
   - Adicionar mais campos aos formulários de criação e edição de clientes
   - Fornecer opções de filtragem ou busca para listar apenas parte dos clientes
-* Exibir estatística descritiva dos dados dos gráficos (por exemplo, média, desvio-padrão, mínimo, máximo, etc.)
-* Implementação de fórmula mais precisa de integração numérica para o cálculo de ΔE
-* Realizar validação dos dados 
+- Exibir estatística descritiva dos dados dos gráficos (por exemplo, média, desvio-padrão, mínimo, máximo, etc.)
+- Implementação de fórmula mais precisa de integração numérica para o cálculo de ΔE
+- Realizar validação dos dados 
 
 ### Quais ferramentas posso utilizar para resolver o desafio?
 
@@ -119,7 +119,7 @@ Com exceção do ReactJS, não será especificado um conjunto de ferramentas esp
 
 ### Mas, afinal, quais ferramentas a Sharenergy utiliza?
 
-- Javascript, Typescript e Go
+* Javascript, Typescript e Go
 * Framework para front-end: [React JS](https://pt-br.reactjs.org/) com roteamento [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 * Para back-end: [Node.js](https://nodejs.org/en/) e [Go](https://golang.org/)
 * Banco de dados: [MongoDB](https://www.mongodb.com/) do lado do servidor e [Minimongo](https://guide.meteor.com/collections.html) do lado do cliente (cache)
