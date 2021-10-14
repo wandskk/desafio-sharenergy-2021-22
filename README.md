@@ -67,6 +67,8 @@ A aplicação deve possuir os recursos básicos de CRUD (Create, Read, Update, D
 
 *A aplicação deve estimar o retorno financeiro obtido por cada cliente oriundo da energia produzida pela usina fotovoltaica no dia.*
 
+*Considere como valor da energia elétrica: R\$0,95 / kWh*
+
 Exemplo de como calcular:
 
 Primeiramente, a aplicação deve calcular a energia elétrica total produzida no dia utilizando as informações de potência em função do tempo disponíveis no objeto [dadosUsina.json](dadosUsina.json). Lembre-se que, fisicamente, a potência P (kW) é a derivada no tempo t (h) da energia E (kWh), P = dE/dt. Portanto, a energia gerada pode ser calculada a partir da potência por: 
@@ -89,9 +91,9 @@ i | Tempo (h) | Potência (kW)
 
 O intervalo de tempo de amostragem é: Δt = 11 h - 6h = 16 h - 11 h = 21 h - 16 h = 5 h. O número total de dados é: N = 4. E a energia gerada no dia é: ΔE = 5 h &times; (5 kW + 20 kW + 15 kW) = 5 h &times; 40 kW = 200 kWh.
    
-De posse dos valores da energia gerada (ΔE) e do preço da energia elétrica (considere R\$0,95 / kWh), a receita total pode ser facilmente determinada. Por fim, o retorno de cada cliente pode ser calculado com base no percentual de participação de cada cliente em relação a usina. No caso dos dados de clientes fornecidos, essa informação está na chave "percentualUsina" do objeto [dadosClientes.json](dadosClientes.json).
+De posse dos valores da energia gerada (ΔE) e do preço da energia elétrica, a receita total pode ser facilmente determinada. Por fim, o retorno de cada cliente pode ser calculado com base no percentual de participação de cada cliente em relação a usina. No caso dos dados de clientes fornecidos, essa informação está na chave "percentualUsina" do objeto [dadosClientes.json](dadosClientes.json).
 
-No exemplo anterior, como a usina produziu 200 kWh no dia, a receita total no dia é: 200 kWh &times; R\$0,95 / kWh = R\$190,00. Além disso, se dois clientes tiverem cada 50% de participação da usina, cada cliente terá um retorno de: (50 / 100) &times; R$190,00 = R$95,00.
+No exemplo anterior, como a usina produziu 200 kWh no dia, a receita total no dia é: 200 kWh &times; R\$0,95 / kWh = R\$190,00. Além disso, se dois clientes tiverem cada 50% de participação da usina, cada cliente terá um retorno de: (50 / 100) &times; R\$190,00 = R\$95,00.
 
 ### Aprimoramentos adicionais da aplicação (opcional)
 
