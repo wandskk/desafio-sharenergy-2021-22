@@ -1,0 +1,35 @@
+.select {
+  float: right;
+  border: 1px solid #dcdcdc;
+  padding: 0.5rem !important;
+  border-radius: 1rem !important;
+}
+
+.select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  border: none;
+  font-size: 0.8rem;
+  color: #c8c8c8;
+}
+
+.select select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.select svg {
+  fill: #000000;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.graphic {
+  background-color: #faf8f4 !important;
+  padding: 1rem !important;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
