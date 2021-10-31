@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { BASE_URL } from '../../api';
 import CustomerEdit from '../../Components/CustomerEdit/CustomerEdit';
 import CustomersTable from '../../Components/CustomersTable/CustomersTable';
+import Loading from '../../Components/Loading/Loading';
 import Message from '../../Components/Message/Message';
 import Title from '../../Components/Title/Title';
 
@@ -11,13 +12,16 @@ const Clients = () => {
 
   const [data, setData] = React.useState(null);
   const [msg, setMsg] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
 
   async function getData() {
     const response = await fetch(BASE_URL + '/clientes');
     const json = await response.json();
     if (json.length > 0) {
       setData(json);
+      setLoading(false);
     }
+    setLoading(false);
   }
 
   React.useEffect(() => {
@@ -25,6 +29,7 @@ const Clients = () => {
   }, []);
 
   if (edit) return <CustomerEdit />;
+  if (loading) return <Loading />;
   if (data === null)
     return (
       <div className="row">
@@ -37,6 +42,7 @@ const Clients = () => {
         </div>
       </div>
     );
+
   return (
     <div className="row">
       <div className="col">

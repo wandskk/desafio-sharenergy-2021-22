@@ -5,8 +5,10 @@ import { useParams } from 'react-router-dom';
 import Title from '../Title/Title';
 import Input from '../Form/Input';
 import Message from '../Message/Message';
+import Loading from '../Loading/Loading';
 
 const CustomerEdit = () => {
+  const [loading, setLoading] = React.useState(true);
   const { edit } = useParams();
   const [data, setData] = React.useState(null);
   const [name, setName] = React.useState('');
@@ -22,7 +24,9 @@ const CustomerEdit = () => {
       setName(json.nomeCliente);
       setUsineId(json.usinas[0].usinaId);
       setUsinePercent(json.usinas[0].percentualDeParticipacao);
+      setLoading(false);
     }
+    setLoading(false);
   }
 
   React.useEffect(() => {
@@ -62,7 +66,7 @@ const CustomerEdit = () => {
     e.preventDefault();
     updateCustomer();
   }
-
+  if (loading) return <Loading />;
   if (data === null)
     return (
       <div className="row">

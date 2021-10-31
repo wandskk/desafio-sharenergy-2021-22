@@ -12,8 +12,7 @@ import {
 } from 'recharts';
 import SelectGraphic from './SelectGraphic';
 
-const Graphic = () => {
-  const [data, setData] = React.useState(null);
+const Graphic = ({ data, setData }) => {
   const [select, setSelect] = React.useState('tensao_V');
   const [currentUnit, setCurrentUnit] = React.useState('V');
 
