@@ -10,11 +10,11 @@ const App = () => {
   return (
     <div className="container-fluid">
       <BrowserRouter>
-        <div
-          className="container"
-          style={{ minHeight: window.innerHeight - 83 + 'px' }}
-        >
-          <div className="row">
+        <div className="container">
+          <div
+            className="row"
+            style={{ minHeight: window.innerHeight - 83 + 'px' }}
+          >
             <div className="col-2 sidemenu">
               <SideMenu />
             </div>
