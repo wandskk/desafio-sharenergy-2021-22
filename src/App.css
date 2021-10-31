@@ -29,6 +29,11 @@ h3 {
 }
 
 .content {
-  padding-top: 8.5rem !important;
+  padding-top: 4rem !important;
   padding-left: 4rem !important;
+  padding-bottom: 4rem;
+}
+
+.sidemenu {
+  border-right: 1px solid #ebebeb;
 }

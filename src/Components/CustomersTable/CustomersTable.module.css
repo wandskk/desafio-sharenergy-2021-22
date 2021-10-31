@@ -1,0 +1,62 @@
+.clientTable li {
+  list-style: none !important;
+}
+
+.thead th {
+  font-size: 0.8rem;
+  color: #bebebe;
+}
+
+.tbody td {
+  font-size: 0.8rem;
+  font-weight: 800 !important;
+}
+
+.tbody img {
+  width: 2rem !important;
+}
+
+.clientInfos {
+  border-bottom: 1px solid #f7f7f8;
+}
+
+.clientId {
+  color: #a7aabd;
+  font-weight: initial;
+}
+
+.clientUsines {
+  padding-left: 0 !important;
+}
+
+.clientUsines ul {
+  padding-left: 0.8rem !important;
+}
+
+.clientUsines ul li {
+  font-size: 0.7rem;
+}
+
+.actions ul {
+  padding-left: 0 !important;
+}
+
+.actions li {
+  padding: 0.2rem !important;
+  margin-bottom: 0.2rem;
+  width: 5rem;
+}
+
+.actions svg {
+  width: 1rem;
+  height: 1rem;
+}
+.actions li:nth-child(1) {
+  background-color: #f7fbff;
+  color: #8aa7dd;
+}
+
+.actions li:nth-child(2) {
+  background-color: #fdf4f5;
+  color: #cd253d;
+}

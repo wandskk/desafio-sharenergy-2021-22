@@ -1,0 +1,21 @@
+.formEdit {
+  margin-top: 1.4rem;
+}
+
+.formEdit * {
+  font-size: 0.8rem !important;
+}
+
+.formEdit label {
+  margin-bottom: 0.5rem;
+}
+
+.formEdit input {
+  margin-bottom: 1rem;
+}
+
+.formEdit button {
+  width: 25%;
+  margin-left: 1rem;
+  float: right;
+}

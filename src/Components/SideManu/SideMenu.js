@@ -11,10 +11,7 @@ import { NavLink } from 'react-router-dom';
 const SideMenu = () => {
   return (
     <div className="row">
-      <div
-        className={'col ' + styles.sidemenu}
-        style={{ height: window.innerHeight + 200 + 'px' }}
-      >
+      <div className={'col ' + styles.sidemenu}>
         <div className="row">
           <div className="col ">
             <div className={styles.logo}>

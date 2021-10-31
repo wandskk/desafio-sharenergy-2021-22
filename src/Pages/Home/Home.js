@@ -1,6 +1,7 @@
 import React from 'react';
 import Graphic from '../../Components/Graphic/Graphic';
 import SideStatistics from '../../Components/SideStatistics/SideStatistics';
+import Title from '../../Components/Title/Title';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
       <div className="col-8">
         <div className="row">
           <div className="col">
-            <h1>Olá, user</h1>
+            <Title>Olá, user</Title>
             <span className={styles.welcome}>Bem-vindo(a) de volta !</span>
           </div>
         </div>

@@ -10,7 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { VscSettings } from 'react-icons/vsc';
+import SelectGraphic from './SelectGraphic';
 
 const Graphic = () => {
   const [data, setData] = React.useState(null);
@@ -67,22 +67,11 @@ const Graphic = () => {
           <h2>Gráfico estatístico</h2>
         </div>
         <div className="col-3">
-          <div className={styles.select}>
-            <select
-              name="graphChange"
-              id="graphChange"
-              value={select}
-              onChange={({ target }) => setSelect(target.value)}
-            >
-              <option value="tensao_V">Tensão</option>
-              <option value="corrente_A">Corrente</option>
-              <option value="potencia_kW">Potência</option>
-              <option value="temperatura_C">Temperatura</option>
-            </select>
-            <label htmlFor="graphChange">
-              <VscSettings />
-            </label>
-          </div>
+          <SelectGraphic
+            styles={styles}
+            select={select}
+            setSelect={setSelect}
+          />
         </div>
       </div>
 

@@ -1,8 +1,18 @@
 .select {
   float: right;
   border: 1px solid #dcdcdc;
-  padding: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
   border-radius: 1rem !important;
+}
+
+.select label:after {
+  display: inline-block;
+  box-sizing: border-box;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #999;
+  margin-left: -17px;
+  pointer-events: none;
 }
 
 .select select {
@@ -13,6 +23,7 @@
   border: none;
   font-size: 0.8rem;
   color: #c8c8c8;
+  background: url('../../Images/settings.svg') no-repeat right white;
 }
 
 .select select:focus {

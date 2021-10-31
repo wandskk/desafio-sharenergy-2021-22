@@ -1,0 +1,43 @@
+.create,
+.error,
+.updated {
+  border-radius: 5px;
+  padding: 10px !important;
+  max-width: 400px;
+  margin: 30px auto;
+  position: fixed !important;
+  top: 0.7rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slide-down 0.5s;
+  z-index: 10;
+}
+
+.create {
+  color: #004085;
+  background-color: #cce5ff;
+  border: 2px solid #b8daff;
+}
+
+.error {
+  color: #ffffff;
+  background-color: #f00;
+  border: 2px solid #f00f0e;
+}
+
+.updated {
+  color: #000000;
+  background-color: #fcac1b;
+  border: 2px solid #febc1b;
+}
+
+@keyframes slide-down {
+  from {
+    top: -5rem;
+    left: 50%;
+  }
+  to {
+    top: 0.7rem;
+    left: 50%;
+  }
+}

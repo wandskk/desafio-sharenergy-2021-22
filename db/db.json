@@ -1060,7 +1060,7 @@
   ],
   "clientes": [
     {
-      "numeroCliente": 1,
+      "id": 1,
       "nomeCliente": "Ana Silva",
       "usinas": [
         {
@@ -1070,7 +1070,7 @@
       ]
     },
     {
-      "numeroCliente": 2,
+      "id": 2,
       "nomeCliente": "João Santos",
       "usinas": [
         {
@@ -1080,7 +1080,7 @@
       ]
     },
     {
-      "numeroCliente": 3,
+      "id": 3,
       "nomeCliente": "Maria Coelho",
       "usinas": [
         {
