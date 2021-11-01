@@ -1,14 +1,20 @@
 import React from 'react';
 import { BASE_URL } from '../../api';
 import Graphic from '../../Components/Graphic/Graphic';
+import Statistic from '../../Components/Graphic/Statistic';
 import Loading from '../../Components/Loading/Loading';
-import SideStatistics from '../../Components/SideStatistics/SideStatistics';
 import Title from '../../Components/Title/Title';
 import styles from './Home.module.css';
 
 const Home = () => {
   const [data, setData] = React.useState(null);
+  const [average, setAverage] = React.useState(null);
+  // const [mode, setMode] = React.useState(null);
+  const [patternDeviation, setPatternDeviation] = React.useState(null);
+  const [max, setMax] = React.useState(null);
+  const [min, setMin] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
+  const [select, setSelect] = React.useState(null);
   async function getData() {
     const response = await fetch(`${BASE_URL}/usina`);
     const json = await response.json();
@@ -32,14 +38,89 @@ const Home = () => {
     setLoading(false);
   }
 
+  function getAverage() {
+    if (data !== null && data.length > 0) {
+      const media = data.reduce((total, item) => {
+        return total + item[select];
+      }, 0);
+      setAverage([(media / data.length).toFixed(2)]);
+    }
+  }
+
+  // function getMode() {
+  //   if (data !== null && data.length > 0) {
+  //     const histogram = (arr) =>
+  //       arr.reduce((result, item) => {
+  //         result[item] = (result[item] || 0) + 1;
+  //         return result;
+  //       }, {});
+
+  //     const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
+
+  //     function mode(arr) {
+  //       let result = pairs(histogram(arr))
+  //         .sort((a, b) => b[1] - a[1])
+  //         .filter((item, index, source) => item[1] === source[0][1])
+  //         .map((item) => item[0]);
+  //       return result.length === arr.length ? [] : result;
+  //     }
+  //     let filtered = [];
+  //     data.filter((item) => {
+  //       filtered.push(item[select].toFixed(2));
+  //     });
+  //     setMode(mode(filtered));
+  //   }
+  // }
+
+  function getPatternDeviation() {
+    if (data !== null && data.length > 0) {
+      let filtered = [];
+      data.filter((item) => {
+        filtered.push(item[select].toFixed(2));
+      });
+      let deviation = filtered.reduce(
+        (total, valor) =>
+          total + Math.pow(average - valor, 2) / filtered.length,
+        0
+      );
+      let patterndeviation = Math.sqrt(deviation);
+      setPatternDeviation(patterndeviation.toFixed(2));
+    }
+  }
+
+  function getMaxAndMin() {
+    if (data !== null && data.length > 0) {
+      let filtered = [];
+      data.filter((item) => {
+        filtered.push(item[select].toFixed(2));
+      });
+      var max = filtered.reduce((a, b) => {
+        return Math.max(a, b);
+      });
+      var min = filtered.reduce((a, b) => {
+        return Math.min(a, b);
+      });
+      setMax(max);
+      setMin(min);
+    }
+  }
+
   React.useEffect(() => {
     getData();
   }, []);
+
+  React.useEffect(() => {
+    getAverage();
+    // getMode();
+    getPatternDeviation();
+    getMaxAndMin();
+  }, [select]);
+
   if (loading) return <Loading />;
   if (data === null) return null;
   return (
     <div className="row">
-      <div className="col-8">
+      <div className="col-10">
         <div className="row">
           <div className="col">
             <Title>Olá, user</Title>
@@ -47,31 +128,43 @@ const Home = () => {
           </div>
         </div>
         <div className="row">
+          <Statistic
+            value={average}
+            className={styles.info + ' ' + styles.info1}
+          >
+            M<sub>e</sub>
+          </Statistic>
+          <Statistic
+            label={'D.P.'}
+            value={patternDeviation}
+            className={styles.info + ' ' + styles.info2}
+          >
+            σ
+          </Statistic>
+          <Statistic value={max} className={styles.info + ' ' + styles.info3}>
+            Máx.
+          </Statistic>
+          <Statistic value={min} className={styles.info + ' ' + styles.info4}>
+            Mín.
+          </Statistic>
+
+          {/* {mode !== null && (
+            <Statistic
+              label={'Moda'}
+              value={mode.length > 1 ? mode[0] : mode}
+              className={styles.info + ' ' + styles.info4}
+            >
+              σ{' '}
+            </Statistic>
+          )} */}
+        </div>
+        <div className="row">
           <div className="col">
             <section className={styles.graphicsection}>
-              <Graphic data={data} setData={setData} />
+              <Graphic data={data} setSelection={setSelect} />
             </section>
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <div className={styles.info + ' ' + styles.info1}></div>
-          </div>
-          <div className="col">
-            <div className={styles.info + ' ' + styles.info2}></div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <div className={styles.info + ' ' + styles.info3}></div>
-          </div>
-          <div className="col">
-            <div className={styles.info + ' ' + styles.info4}></div>
-          </div>
-        </div>
-      </div>
-      <div className="col-4">
-        <SideStatistics />
       </div>
     </div>
   );

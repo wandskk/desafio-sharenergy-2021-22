@@ -11,6 +11,7 @@ const Clients = () => {
   const { edit } = useParams();
 
   const [data, setData] = React.useState(null);
+  const [profit, setProfit] = React.useState(null);
   const [msg, setMsg] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
 
@@ -24,8 +25,39 @@ const Clients = () => {
     setLoading(false);
   }
 
+  async function getProfit() {
+    const response = await fetch(`${BASE_URL}/usina`);
+    const json = await response.json();
+    if (response.ok === true) {
+      const arr = [];
+      for (let i = 0; i < json.length; i++) {
+        arr.push({
+          tempo_h: json[i]['tempo_h'],
+          potencia_kW: json[i]['potencia_kW'],
+        });
+      }
+      let dE = arr.reduce((total, item) => {
+        return total + item.potencia_kW;
+      }, 0);
+      let dT;
+      for (let i = 0; i <= arr.length; i++) {
+        let next = i + 1;
+        if (next < arr.length) {
+          let calc = arr[next].tempo_h - arr[i].tempo_h;
+          dT = calc - Math.trunc(calc);
+        }
+      }
+      let p = dE * dT;
+      let profit = 0.95 * p;
+      setProfit(profit);
+      setLoading(false);
+    }
+    setLoading(false);
+  }
+
   React.useEffect(() => {
     getData();
+    getProfit();
   }, []);
 
   if (edit) return <CustomerEdit />;
@@ -65,6 +97,7 @@ const Clients = () => {
               getData={getData}
               msg={msg}
               setMsg={setMsg}
+              profit={profit}
             />
           </div>
         </div>

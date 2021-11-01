@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './SideMenu.module.css';
 import { BiHomeAlt } from 'react-icons/bi';
 import { FiUser } from 'react-icons/fi';
-import { MdOutlineAttachMoney } from 'react-icons/md';
+
 import Logo from '../Logo/Logo';
 import logoSrc from '../../Images/logo.png';
 import Item from './Item';
@@ -35,14 +35,6 @@ const SideMenu = () => {
                 <Item>
                   <FiUser />
                   Clientes
-                </Item>
-              </div>
-            </NavLink>
-            <NavLink to="/finance">
-              <div className={styles.item}>
-                <Item>
-                  <MdOutlineAttachMoney />
-                  Finanças
                 </Item>
               </div>
             </NavLink>

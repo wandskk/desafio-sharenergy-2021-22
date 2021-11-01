@@ -6,7 +6,7 @@ import { MdDeleteSweep } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import CustomerDelete from '../CustomerDelete/CustomerDelete';
 
-const ClientsTable = ({ data, msg, setMsg, getData }) => {
+const ClientsTable = ({ data, msg, setMsg, getData, profit }) => {
   if (data !== null)
     return (
       <table className={'table table-borderless ' + styles.clientTable}>
@@ -14,6 +14,7 @@ const ClientsTable = ({ data, msg, setMsg, getData }) => {
           <tr>
             <th scope="col">Nome</th>
             <th scope="col">Usinas</th>
+            <th scope="col">Lucro do dia</th>
             <th scope="col">Ações</th>
           </tr>
         </thead>
@@ -46,6 +47,19 @@ const ClientsTable = ({ data, msg, setMsg, getData }) => {
                       </ul>
                     </li>
                   ))}
+                </ul>
+              </td>
+              <td className={styles.profit}>
+                <ul>
+                  <li>
+                    {(
+                      profit *
+                      (usinas[0].percentualDeParticipacao / 100)
+                    ).toLocaleString('pt-br', {
+                      style: 'currency',
+                      currency: 'BRL',
+                    })}
+                  </li>
                 </ul>
               </td>
 
