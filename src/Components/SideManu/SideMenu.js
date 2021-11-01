@@ -30,7 +30,7 @@ const SideMenu = () => {
               </div>
             </NavLink>
 
-            <NavLink to="/clients">
+            <NavLink to="/customers">
               <div className={styles.item}>
                 <Item>
                   <FiUser />

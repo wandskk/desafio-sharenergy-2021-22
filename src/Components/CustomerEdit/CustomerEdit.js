@@ -9,7 +9,9 @@ import Loading from '../Loading/Loading';
 
 const CustomerEdit = () => {
   const [loading, setLoading] = React.useState(true);
+
   const { edit } = useParams();
+
   const [data, setData] = React.useState(null);
   const [name, setName] = React.useState('');
   const [usineId, setUsineId] = React.useState('');

@@ -66,7 +66,7 @@ const ClientsTable = ({ data, msg, setMsg, getData, profit }) => {
               <td className={styles.actions}>
                 <ul>
                   <li>
-                    <NavLink to={'/clients/' + id}>
+                    <NavLink to={'/customers/' + id}>
                       <AiFillEdit /> Editar
                     </NavLink>
                   </li>

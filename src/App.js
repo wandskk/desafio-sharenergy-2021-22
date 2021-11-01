@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SideMenu from './Components/SideManu/SideMenu';
 import Home from './Pages/Home/Home';
 import Footer from './Components/Footer/Footer';
-import Clients from './Pages/Customers/Customers';
+import Customers from './Pages/Customers/Customers';
 
 const App = () => {
   return (
@@ -22,7 +22,8 @@ const App = () => {
               <Routes>
                 <div className="">
                   <Route path="/" element={<Home />} />
-                  <Route path="/clients" element={<Clients />} />
+                  <Route path="/customers" element={<Customers />} />
+                  <Route path="/customers/:edit/*" element={<Customers />} />
                 </div>
               </Routes>
             </div>
