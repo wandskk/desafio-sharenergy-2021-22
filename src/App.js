@@ -9,14 +9,8 @@ import Logo from './Components/Logo/Logo';
 import SideMenuMobile from './Components/SideManu/SideMenuMobile';
 
 const App = () => {
-  const [width, setWidth] = React.useState(null);
-
-  setInterval(() => {
-    setWidth(window.innerWidth);
-  }, 100);
   return (
     <div className="container-fluid">
-      {width}
       <BrowserRouter>
         <div className="container">
           <div className="row menu-mobile">
