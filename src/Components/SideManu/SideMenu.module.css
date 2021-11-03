@@ -1,8 +1,12 @@
+.logo {
+  text-align: left !important;
+}
+
 .logo img {
   width: 8rem !important;
-  margin-top: 4rem;
-  margin-bottom: 2.2rem;
-  margin-left: 1.2rem;
+  margin-top: 4rem !important;
+  margin-bottom: 2.2rem !important;
+  margin-left: 1.2rem !important;
 }
 
 .items ul {

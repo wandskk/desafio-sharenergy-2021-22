@@ -24,6 +24,11 @@ h3 {
   font-weight: 600 !important;
 }
 
+ul,
+li {
+  list-style: none !important;
+}
+
 .active div {
   border-left: 2px solid #000;
 }
@@ -36,4 +41,35 @@ h3 {
 
 .sidemenu {
   border-right: 1px solid #ebebeb;
+}
+
+.sideMenuMobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sidemenu {
+    display: none;
+  }
+
+  .sidemenumobile {
+    display: flex !important;
+  }
+
+  .content {
+    padding: 1rem !important;
+  }
+
+  .Title {
+    padding-top: 1rem !important;
+  }
+
+  .logoMobile {
+    text-align: center !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu-mobile {
+    display: none !important;
+  }
 }

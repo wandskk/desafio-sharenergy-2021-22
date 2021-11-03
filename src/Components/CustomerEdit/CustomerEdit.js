@@ -72,14 +72,14 @@ const CustomerEdit = () => {
   if (data === null)
     return (
       <div className="row">
-        <div className="col">
+        <div className="col-md-12">
           <div className="row">
-            <div className="col">
+            <div className="col-md-12">
               <Title>Lista de clientes {'>'} Sem resultado</Title>
             </div>
           </div>
           <div className="row">
-            <div className="col">
+            <div className="col-md-12">
               <h2>Ops, acho que algo deu errado :(</h2>
             </div>
           </div>
@@ -88,28 +88,28 @@ const CustomerEdit = () => {
     );
   return (
     <div className="row">
-      <div className="col">
+      <div className="col-md-12">
         <div className="row">
           {msg !== null && (
-            <div className="col-10 offset-md-1">
+            <div className="col-md-10 col-12 offset-md-1">
               <Message msg={msg} setMsg={setMsg} className={msg.className} />
             </div>
           )}
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-md-12">
             <Title>
               Lista de clientes {'>'} Editar {'>'} {data.nomeCliente}
             </Title>
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-md-12">
             <h2>Formulário de alteração do cliente</h2>
           </div>
         </div>
         <div className="row">
-          <div className="col-8">
+          <div className="col-md-8">
             <div className={styles.formEdit}>
               <form onSubmit={handleSubmit}>
                 <Input

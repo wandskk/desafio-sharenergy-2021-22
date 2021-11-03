@@ -42,10 +42,10 @@ const Graphic = ({ data, setSelection }) => {
   return (
     <>
       <div className="row">
-        <div className="col-9">
+        <div className="col-md-9">
           <h2>Gráfico estatístico</h2>
         </div>
-        <div className="col-3">
+        <div className="col-md-3">
           <SelectGraphic
             styles={styles}
             select={select}
@@ -55,7 +55,7 @@ const Graphic = ({ data, setSelection }) => {
       </div>
 
       <div className="row">
-        <div className="col">
+        <div className="col-md-12">
           <div className={styles.graphic}>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart

@@ -9,12 +9,13 @@ import styles from './Home.module.css';
 const Home = () => {
   const [data, setData] = React.useState(null);
   const [average, setAverage] = React.useState(null);
-  // const [mode, setMode] = React.useState(null);
   const [patternDeviation, setPatternDeviation] = React.useState(null);
   const [max, setMax] = React.useState(null);
   const [min, setMin] = React.useState(null);
+
   const [loading, setLoading] = React.useState(true);
   const [select, setSelect] = React.useState(null);
+
   async function getData() {
     const response = await fetch(`${BASE_URL}/usina`);
     const json = await response.json();
@@ -47,31 +48,6 @@ const Home = () => {
     }
   }
 
-  // function getMode() {
-  //   if (data !== null && data.length > 0) {
-  //     const histogram = (arr) =>
-  //       arr.reduce((result, item) => {
-  //         result[item] = (result[item] || 0) + 1;
-  //         return result;
-  //       }, {});
-
-  //     const pairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]]);
-
-  //     function mode(arr) {
-  //       let result = pairs(histogram(arr))
-  //         .sort((a, b) => b[1] - a[1])
-  //         .filter((item, index, source) => item[1] === source[0][1])
-  //         .map((item) => item[0]);
-  //       return result.length === arr.length ? [] : result;
-  //     }
-  //     let filtered = [];
-  //     data.filter((item) => {
-  //       filtered.push(item[select].toFixed(2));
-  //     });
-  //     setMode(mode(filtered));
-  //   }
-  // }
-
   function getPatternDeviation() {
     if (data !== null && data.length > 0) {
       let filtered = [];
@@ -83,8 +59,8 @@ const Home = () => {
           total + Math.pow(average - valor, 2) / filtered.length,
         0
       );
-      let patterndeviation = Math.sqrt(deviation);
-      setPatternDeviation(patterndeviation.toFixed(2));
+      let patternDeviation = Math.sqrt(deviation);
+      setPatternDeviation(patternDeviation.toFixed(2));
     }
   }
 
@@ -111,7 +87,6 @@ const Home = () => {
 
   React.useEffect(() => {
     getAverage();
-    // getMode();
     getPatternDeviation();
     getMaxAndMin();
   }, [select]);
@@ -120,14 +95,14 @@ const Home = () => {
   if (data === null) return null;
   return (
     <div className="row">
-      <div className="col-10">
+      <div className="col-lg col-md">
         <div className="row">
-          <div className="col">
+          <div className="col-lg col-md">
             <Title>Olá, user</Title>
             <span className={styles.welcome}>Bem-vindo(a) de volta !</span>
           </div>
         </div>
-        <div className="row">
+        <div className={styles.statistics + ' row'}>
           <Statistic
             value={average}
             className={styles.info + ' ' + styles.info1}
@@ -147,23 +122,34 @@ const Home = () => {
           <Statistic value={min} className={styles.info + ' ' + styles.info4}>
             Mín.
           </Statistic>
-
-          {/* {mode !== null && (
-            <Statistic
-              label={'Moda'}
-              value={mode.length > 1 ? mode[0] : mode}
-              className={styles.info + ' ' + styles.info4}
-            >
-              σ{' '}
-            </Statistic>
-          )} */}
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-lg col-md">
             <section className={styles.graphicsection}>
               <Graphic data={data} setSelection={setSelect} />
             </section>
           </div>
+        </div>
+        <div className={styles.statisticsMobile + ' row'}>
+          <Statistic
+            value={average}
+            className={styles.info + ' ' + styles.info1}
+          >
+            M<sub>e</sub>
+          </Statistic>
+          <Statistic
+            label={'D.P.'}
+            value={patternDeviation}
+            className={styles.info + ' ' + styles.info2}
+          >
+            σ
+          </Statistic>
+          <Statistic value={max} className={styles.info + ' ' + styles.info3}>
+            Máx.
+          </Statistic>
+          <Statistic value={min} className={styles.info + ' ' + styles.info4}>
+            Mín.
+          </Statistic>
         </div>
       </div>
     </div>

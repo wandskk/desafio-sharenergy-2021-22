@@ -6,31 +6,31 @@ import { MdDeleteSweep } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import CustomerDelete from '../CustomerDelete/CustomerDelete';
 
-const ClientsTable = ({ data, msg, setMsg, getData, profit }) => {
+const CustomersTable = ({ data, msg, setMsg, getData, profit }) => {
   if (data !== null)
     return (
-      <table className={'table table-borderless ' + styles.clientTable}>
+      <table className={'table table-borderless ' + styles.customTable}>
         <thead className={styles.thead}>
           <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Usinas</th>
-            <th scope="col">Lucro do dia</th>
-            <th scope="col">Ações</th>
+            <th scope="col-md">Nome</th>
+            <th scope="col-md">Usinas</th>
+            <th scope="col-md">Lucro do dia</th>
+            <th scope="col-md">Ações</th>
           </tr>
         </thead>
         <tbody className={styles.tbody}>
           {data.map(({ id, nomeCliente, usinas }) => (
-            <tr className={styles.clientInfos} key={id}>
+            <tr className={styles.customInfos} key={id}>
               <td>
                 <div className="row">
-                  <div className="col-1">
-                    <div className="perfilphoto">
+                  <div className={'col-md-1 col-0 ' + styles.perfilphoto}>
+                    <div>
                       <img src={userPng} alt="Foto do usuário" />
                     </div>
                   </div>
-                  <div className="col">
+                  <div className="col-md col customerName">
                     <ul>
-                      <li className={styles.clientName}>{nomeCliente}</li>
+                      <li>{nomeCliente}</li>
                       <li className={styles.id}>#{id}</li>
                     </ul>
                   </div>
@@ -38,7 +38,7 @@ const ClientsTable = ({ data, msg, setMsg, getData, profit }) => {
               </td>
 
               <td>
-                <ul className={styles.clientUsines}>
+                <ul className={styles.customerUsines}>
                   {usinas.map(({ usinaId, percentualDeParticipacao }) => (
                     <li key={usinaId}>
                       Usina {usinaId}
@@ -90,4 +90,4 @@ const ClientsTable = ({ data, msg, setMsg, getData, profit }) => {
     );
 };
 
-export default ClientsTable;
+export default CustomersTable;

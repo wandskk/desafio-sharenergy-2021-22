@@ -11,16 +11,16 @@ import { NavLink } from 'react-router-dom';
 const SideMenu = () => {
   return (
     <div className="row">
-      <div className={'col ' + styles.sidemenu}>
+      <div className={'col-md col-sm ' + styles.sidemenu}>
         <div className="row">
-          <div className="col ">
+          <div className="col-md col-sm ">
             <div className={styles.logo}>
               <Logo src={logoSrc} alt="Logo" />
             </div>
           </div>
         </div>
         <div className="row">
-          <div className={'col ' + styles.items}>
+          <div className={'col-md col-sm ' + styles.items}>
             <NavLink to="/" end>
               <div className={styles.item}>
                 <Item>

@@ -1,0 +1,9 @@
+.logo {
+  width: 100% !important;
+}
+
+.logo img {
+  width: 8rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

@@ -1,4 +1,4 @@
-.clientTable li {
+.customerTable li {
   list-style: none !important;
 }
 
@@ -16,24 +16,24 @@
   width: 2rem !important;
 }
 
-.clientInfos {
+.customerInfos {
   border-bottom: 1px solid #f7f7f8;
 }
 
-.clientId {
+.customerId {
   color: #a7aabd;
   font-weight: initial;
 }
 
-.clientUsines {
+.customerUsines {
   padding-left: 0 !important;
 }
 
-.clientUsines ul {
+.customerUsines ul {
   padding-left: 0.8rem !important;
 }
 
-.clientUsines ul li {
+.customerUsines ul li {
   font-size: 0.7rem;
 }
 
@@ -63,4 +63,14 @@
 
 .profit {
   color: green;
+}
+
+@media screen and (max-width: 768px) {
+  .perfilphoto {
+    display: none !important;
+  }
+
+  .customInfos ul {
+    padding: 0 !important;
+  }
 }

@@ -66,9 +66,9 @@ const Clients = () => {
   if (data === null)
     return (
       <div className="row">
-        <div className="col">
+        <div className="col-lg col-md">
           <div className="row">
-            <div className="col">
+            <div className="col-lg col-md">
               <Title>Não há clientes cadastrados!</Title>
             </div>
           </div>
@@ -78,21 +78,21 @@ const Clients = () => {
 
   return (
     <div className="row">
-      <div className="col">
+      <div className="col-lg col-md">
         <div className="row">
           {msg !== null && (
-            <div className="col-10 offset-md-1">
+            <div className="col-lg-10 col-md-10 offset-md-1 col">
               <Message msg={msg} setMsg={setMsg} className={msg.className} />
             </div>
           )}
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-lg col-md col">
             <Title>Lista de clientes</Title>
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-lg col-md col">
             <CustomersTable
               data={data}
               getData={getData}
