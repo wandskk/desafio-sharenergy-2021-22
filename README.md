@@ -14,13 +14,13 @@
 </p>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Sobre o projeto
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-### Built With
+### Construção do app
 
-This project build with.
+Este projeto foi criando com:
 
 * [ReactJS](https://reactjs.org/)
 * [React Router Dom](https://reactrouter.com/)
@@ -32,7 +32,7 @@ This project build with.
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Iniciando o projeto
 1. Clone o repositório
  ```sh
    git clone https://github.com/wandskk/desafio-sharenergy-2021-22.git
