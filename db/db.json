@@ -1078,6 +1078,17 @@
           "percentualDeParticipacao": 20
         }
       ]
+    },
+    {
+        "id": 3,
+        "nomeCliente": "Maria Coelho",
+        "usinas":
+        [
+            {
+                "usinaId": 1,
+                "percentualDeParticipacao": 50
+            }
+        ]
     }
   ]
 }
