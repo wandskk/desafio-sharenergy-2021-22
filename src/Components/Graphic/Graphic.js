@@ -63,12 +63,13 @@ const Graphic = ({ data, setSelection }) => {
                 height={300}
                 data={data}
                 margin={{ top: 20, right: 20 }}
+                isAnimationActive={true}
               >
                 <Line
                   type="monotone"
                   dataKey={select}
                   stroke="#8884d8"
-                  isAnimationActive
+                  isAnimationActive={true}
                 />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <XAxis dataKey="tempo_h" interval="preserveStartEnd" unit="h" />

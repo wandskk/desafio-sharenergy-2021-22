@@ -8,7 +8,6 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const [data, setData] = React.useState(null);
-  const [dataSelected, setDataSelected] = React.useState(null);
   const [average, setAverage] = React.useState(null);
   const [standardDeviation, setStandardDeviation] = React.useState(null);
   const [max, setMax] = React.useState(null);
@@ -45,7 +44,7 @@ const Home = () => {
       const media = data.reduce((total, item) => {
         return total + item[select];
       }, 0);
-      setAverage([(media / data.length).toFixed(2)]);
+      setAverage([(media / data.length).toFixed(2).replace('.', ',')]);
     }
   }
 
@@ -60,7 +59,7 @@ const Home = () => {
       const deviation = Math.sqrt(
         filtered.map((x) => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n
       );
-      setStandardDeviation(deviation.toFixed(2));
+      setStandardDeviation(deviation.toFixed(2).replace('.', ','));
     }
   }
 
@@ -68,16 +67,16 @@ const Home = () => {
     if (data !== null && data.length > 0) {
       let filtered = [];
       data.filter((item) => {
-        filtered.push(item[select].toFixed(2));
+        filtered.push(item[select]);
       });
-      var max = filtered.reduce((a, b) => {
+      let max = filtered.reduce((a, b) => {
         return Math.max(a, b);
       });
-      var min = filtered.reduce((a, b) => {
+      let min = filtered.reduce((a, b) => {
         return Math.min(a, b);
       });
-      setMax(max);
-      setMin(min);
+      setMax(max.toFixed(2).replace('.', ','));
+      setMin(min.toFixed(2).replace('.', ','));
     }
   }
 

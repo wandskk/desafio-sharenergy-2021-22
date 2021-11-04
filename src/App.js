@@ -26,10 +26,10 @@ const App = () => {
             className="row"
             style={{ minHeight: window.innerHeight - 83 + 'px' }}
           >
-            <div className="col-lg-3 col-md-3 sidemenu">
+            <div className="col-lg-2 col-md-3 sidemenu">
               <SideMenu />
             </div>
-            <div className="col-lg-9 col-md-9 col-sm content">
+            <div className="col-lg-8 col-md-9 col-sm content">
               <Routes>
                 <div className="">
                   <Route path="/" element={<Home />} />
