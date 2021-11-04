@@ -58,7 +58,7 @@ const Graphic = ({ data, setSelection }) => {
       <div className="row">
         <div className="col-md-12">
           <div className={styles.graphic}>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={400}>
               <LineChart
                 width={600}
                 height={300}
