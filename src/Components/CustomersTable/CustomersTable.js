@@ -5,11 +5,13 @@ import { AiFillEdit } from 'react-icons/ai';
 import { MdDeleteSweep } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import CustomerDelete from '../CustomerDelete/CustomerDelete';
+import Head from '../Head/Head';
 
 const CustomersTable = ({ data, msg, setMsg, getData, profit }) => {
   if (data !== null)
     return (
       <table className={'table table-borderless ' + styles.customTable}>
+        <Head title={'Clientes'} />
         <thead className={styles.thead}>
           <tr>
             <th scope="col-md">Nome</th>

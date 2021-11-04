@@ -2,6 +2,7 @@ import React from 'react';
 import { BASE_URL } from '../../api';
 import Graphic from '../../Components/Graphic/Graphic';
 import Statistic from '../../Components/Graphic/Statistic';
+import Head from '../../Components/Head/Head';
 import Loading from '../../Components/Loading/Loading';
 import Title from '../../Components/Title/Title';
 import styles from './Home.module.css';
@@ -94,6 +95,7 @@ const Home = () => {
   if (data === null) return null;
   return (
     <div className="row animate__fadeInRight animate__animated animate__fast">
+      <Head title={'Início'} />
       <div className="col-lg col-md">
         <div className="row">
           <div className="col-lg col-md">

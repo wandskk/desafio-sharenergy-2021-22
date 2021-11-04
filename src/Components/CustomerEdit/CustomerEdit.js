@@ -6,6 +6,7 @@ import Title from '../Title/Title';
 import Input from '../Form/Input';
 import Message from '../Message/Message';
 import Loading from '../Loading/Loading';
+import Head from '../Head/Head';
 
 const CustomerEdit = () => {
   const [loading, setLoading] = React.useState(true);
@@ -88,6 +89,7 @@ const CustomerEdit = () => {
     );
   return (
     <div className="row animate__fadeInRight animate__animated animate__fast">
+      <Head title={'Editar cliente'} />
       <div className="col-md-12">
         <div className="row">
           {msg !== null && (
