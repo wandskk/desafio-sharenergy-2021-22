@@ -3,8 +3,6 @@ import styles from './SideMenuMobile.module.css';
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { FiUser } from 'react-icons/fi';
-import { BiHomeAlt } from 'react-icons/bi';
 import Item from './Item';
 
 const SideMenuMobile = () => {

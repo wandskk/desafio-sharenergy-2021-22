@@ -8,8 +8,9 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const [data, setData] = React.useState(null);
+  const [dataSelected, setDataSelected] = React.useState(null);
   const [average, setAverage] = React.useState(null);
-  const [patternDeviation, setPatternDeviation] = React.useState(null);
+  const [standardDeviation, setStandardDeviation] = React.useState(null);
   const [max, setMax] = React.useState(null);
   const [min, setMin] = React.useState(null);
 
@@ -48,19 +49,18 @@ const Home = () => {
     }
   }
 
-  function getPatternDeviation() {
+  function getStandardDeviation() {
     if (data !== null && data.length > 0) {
       let filtered = [];
       data.filter((item) => {
-        filtered.push(item[select].toFixed(2));
+        filtered.push(item[select]);
       });
-      let deviation = filtered.reduce(
-        (total, valor) =>
-          total + Math.pow(average - valor, 2) / filtered.length,
-        0
+      const n = filtered.length;
+      const mean = filtered.reduce((a, b) => a + b) / n;
+      const deviation = Math.sqrt(
+        filtered.map((x) => Math.pow(x - mean, 2)).reduce((a, b) => a + b) / n
       );
-      let patternDeviation = Math.sqrt(deviation);
-      setPatternDeviation(patternDeviation.toFixed(2));
+      setStandardDeviation(deviation.toFixed(2));
     }
   }
 
@@ -87,14 +87,14 @@ const Home = () => {
 
   React.useEffect(() => {
     getAverage();
-    getPatternDeviation();
+    getStandardDeviation();
     getMaxAndMin();
   }, [select]);
 
   if (loading) return <Loading />;
   if (data === null) return null;
   return (
-    <div className="row">
+    <div className="row animate__fadeInRight animate__animated animate__fast">
       <div className="col-lg col-md">
         <div className="row">
           <div className="col-lg col-md">
@@ -110,8 +110,7 @@ const Home = () => {
             M<sub>e</sub>
           </Statistic>
           <Statistic
-            label={'D.P.'}
-            value={patternDeviation}
+            value={standardDeviation}
             className={styles.info + ' ' + styles.info2}
           >
             σ
@@ -139,7 +138,7 @@ const Home = () => {
           </Statistic>
           <Statistic
             label={'D.P.'}
-            value={patternDeviation}
+            value={standardDeviation}
             className={styles.info + ' ' + styles.info2}
           >
             σ

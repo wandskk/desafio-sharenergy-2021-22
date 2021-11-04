@@ -65,7 +65,7 @@ const Clients = () => {
   if (loading) return <Loading />;
   if (data === null)
     return (
-      <div className="row">
+      <div className="row animate__fadeInRight animate__animated animate__fast">
         <div className="col-lg col-md">
           <div className="row">
             <div className="col-lg col-md">
@@ -77,7 +77,7 @@ const Clients = () => {
     );
 
   return (
-    <div className="row">
+    <div className="row  animate__fadeInRight animate__animated animate__fast">
       <div className="col-lg col-md">
         <div className="row">
           {msg !== null && (

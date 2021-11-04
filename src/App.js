@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import SideMenu from './Components/SideManu/SideMenu';
+import SideMenu from './Components/SideMenu/SideMenu';
 import Home from './Pages/Home/Home';
 import Footer from './Components/Footer/Footer';
 import Customers from './Pages/Customers/Customers';
 import Logo from './Components/Logo/Logo';
-import SideMenuMobile from './Components/SideManu/SideMenuMobile';
+import SideMenuMobile from './Components/SideMenu/SideMenuMobile';
 
 const App = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid animate__animated animate__fadeIn animate__fast">
       <BrowserRouter>
         <div className="container">
           <div className="row menu-mobile">

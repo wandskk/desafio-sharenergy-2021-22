@@ -71,14 +71,14 @@ const CustomerEdit = () => {
   if (loading) return <Loading />;
   if (data === null)
     return (
-      <div className="row">
+      <div className="row animate__fadeInRight animate__animated animate__fast">
         <div className="col-md-12">
           <div className="row">
             <div className="col-md-12">
               <Title>Lista de clientes {'>'} Sem resultado</Title>
             </div>
           </div>
-          <div className="row">
+          <div className="row animate__fadeInRight animate__animated animate__fast">
             <div className="col-md-12">
               <h2>Ops, acho que algo deu errado :(</h2>
             </div>
@@ -87,7 +87,7 @@ const CustomerEdit = () => {
       </div>
     );
   return (
-    <div className="row">
+    <div className="row animate__fadeInRight animate__animated animate__fast">
       <div className="col-md-12">
         <div className="row">
           {msg !== null && (
