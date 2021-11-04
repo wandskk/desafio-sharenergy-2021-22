@@ -8,6 +8,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from 'recharts';
 import SelectGraphic from './SelectGraphic';
 
@@ -72,9 +73,10 @@ const Graphic = ({ data, setSelection }) => {
                   isAnimationActive={true}
                 />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                <XAxis dataKey="tempo_h" interval="preserveStartEnd" unit="h" />
-                <YAxis unit={currentUnit} />
+                <XAxis dataKey="tempo_h" interval="preserveStartEnd" />
+                <YAxis />
                 <Tooltip />
+                <Legend align="left" verticalAlign="top" height={36} />
               </LineChart>
             </ResponsiveContainer>
           </div>

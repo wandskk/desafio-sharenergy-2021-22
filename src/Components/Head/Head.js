@@ -6,7 +6,6 @@ const Head = (props) => {
     document
       .querySelector('meta[name="description"]')
       .setAttribute('content', props.description);
-    console.log(props);
   }, [props]);
   return <div></div>;
 };
