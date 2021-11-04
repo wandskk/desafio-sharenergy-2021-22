@@ -5,10 +5,10 @@
     <img src="src/Images/logo-git.png" alt="Logo" width="100%">
   </a>
 
-  <h3 align="center">REACT JS BURGER COMMERCE</h3>
+  <h3 align="center">Desafio para processo seletivo SHARENERGY 2021/22</h3>
 
   <p align="center">
-    An BURGER COMMERCE with ReactJS, React-router-dom, json-server, React Animated CSS and Bootstrap !
+    Um gerenciador simples com ReactJS, React-router-dom, json-server, React Animated CSS e Bootstrap!
     <br />
   </p>
 </p>
@@ -33,27 +33,27 @@ This project build with.
 
 <!-- GETTING STARTED -->
 ## Getting Started
-1. Clone the repo
+1. Clone o repositório
  ```sh
-   git clone https://github.com/wandskk/goburger.git
+   git clone https://github.com/wandskk/desafio-sharenergy-2021-22.git
  ```
-2. Go to project folder
+2. Vá até a pasta
  ```sh
-   cd goburger
+   cd sharenergy
  ```
-3. Install project requires
+3. Instale as dependências do projeto
  ```sh
    npm install or npm i
  ```
-4. Run React App
+4. Execute o projeto
 ```sh
    npm start
  ```
-5. Run json-server
+5. Execute json-server
 ```sh
    npm run backend
  ```
-6. Access link
+6. Acesse o link
  ```sh 
     http://localhost:3000/
 ```
@@ -67,8 +67,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
-Project Link: [https://github.com/wandskk/goburger](https://github.com/wandskk/goburger)
+Project Link: [https://github.com/wandskk/desafio-sharenergy-2021-22/tree/wanderson-kenedy-soares-de-oliveira](https://github.com/wandskk/desafio-sharenergy-2021-22/tree/wanderson-kenedy-soares-de-oliveira)
 
 
 
-[product-screenshot]: src/Assets/img/print.png
+[product-screenshot]: src/Images/sistema.png
