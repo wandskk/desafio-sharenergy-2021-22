@@ -104,22 +104,16 @@ const Home = () => {
           </div>
         </div>
         <div className={styles.statistics + ' row'}>
-          <Statistic
-            value={average}
-            className={styles.info + ' ' + styles.info1}
-          >
+          <Statistic value={average} className="info1">
             M<sub>e</sub>
           </Statistic>
-          <Statistic
-            value={standardDeviation}
-            className={styles.info + ' ' + styles.info2}
-          >
+          <Statistic value={standardDeviation} className="info2">
             σ
           </Statistic>
-          <Statistic value={max} className={styles.info + ' ' + styles.info3}>
+          <Statistic value={max} className="info3">
             Máx.
           </Statistic>
-          <Statistic value={min} className={styles.info + ' ' + styles.info4}>
+          <Statistic value={min} className="info4">
             Mín.
           </Statistic>
         </div>
@@ -129,27 +123,6 @@ const Home = () => {
               <Graphic data={data} setSelection={setSelect} />
             </section>
           </div>
-        </div>
-        <div className={styles.statisticsMobile + ' row'}>
-          <Statistic
-            value={average}
-            className={styles.info + ' ' + styles.info1}
-          >
-            M<sub>e</sub>
-          </Statistic>
-          <Statistic
-            label={'D.P.'}
-            value={standardDeviation}
-            className={styles.info + ' ' + styles.info2}
-          >
-            σ
-          </Statistic>
-          <Statistic value={max} className={styles.info + ' ' + styles.info3}>
-            Máx.
-          </Statistic>
-          <Statistic value={min} className={styles.info + ' ' + styles.info4}>
-            Mín.
-          </Statistic>
         </div>
       </div>
     </div>

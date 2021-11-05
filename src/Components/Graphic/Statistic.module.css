@@ -1,3 +1,12 @@
+.info {
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
 .info1 {
   background-color: #ffefe2;
 }
@@ -12,4 +21,12 @@
 
 .info4 {
   background-color: #f4f6fa;
+}
+
+.unit,
+.value {
+}
+
+.value {
+  text-align: right;
 }

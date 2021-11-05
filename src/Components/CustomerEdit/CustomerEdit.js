@@ -7,6 +7,7 @@ import Input from '../Form/Input';
 import Message from '../Message/Message';
 import Loading from '../Loading/Loading';
 import Head from '../Head/Head';
+import Button from '../Form/Button';
 
 const CustomerEdit = () => {
   const [loading, setLoading] = React.useState(true);
@@ -59,6 +60,9 @@ const CustomerEdit = () => {
         text: `Cliente n° ${edit} atualizado com sucesso`,
         className: 'updated',
       });
+      setTimeout(() => {
+        window.location.href = '/customers';
+      }, 1000);
     } else {
       setMsg({ text: 'Ops, algo deu errado :( ', className: 'red' });
     }
@@ -131,9 +135,7 @@ const CustomerEdit = () => {
                   unit="%"
                 />
 
-                <button type="submit" className="btn btn-success">
-                  Atualizar
-                </button>
+                <Button>Atualizar</Button>
               </form>
             </div>
           </div>

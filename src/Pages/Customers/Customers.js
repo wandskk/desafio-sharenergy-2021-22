@@ -58,7 +58,6 @@ const Clients = () => {
   React.useEffect(() => {
     getData();
     getProfit();
-    console.log(edit);
   }, []);
 
   if (edit) return <CustomerEdit />;

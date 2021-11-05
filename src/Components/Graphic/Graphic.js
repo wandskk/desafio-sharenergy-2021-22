@@ -58,12 +58,12 @@ const Graphic = ({ data, setSelection }) => {
       <div className="row">
         <div className="col-md-12">
           <div className={styles.graphic}>
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="100%" height={300}>
               <LineChart
                 width={600}
                 height={300}
                 data={data}
-                margin={{ top: 20, right: 20 }}
+                margin={{ top: 5, right: 30 }}
                 isAnimationActive={true}
               >
                 <Line
