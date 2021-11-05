@@ -8,7 +8,7 @@
   <h3 align="center">Desafio para processo seletivo SHARENERGY 2021/22</h3>
 
   <p align="center">
-    Um gerenciador simples com ReactJS, React-router-dom, json-server, Animate-CSS e Bootstrap!
+    Um gerenciador simples com ReactJS, React-router-dom, Recharts, json-server, Animate-CSS e Bootstrap!
     <br />
   </p>
 </p>
@@ -24,6 +24,7 @@ Este projeto foi criando com:
 
 * [ReactJS](https://reactjs.org/)
 * [React Router Dom](https://reactrouter.com/)
+* [Recharts](https://recharts.org/en-US/)
 * [json-server](https://www.npmjs.com/package/json-server)
 * [Animate-CSS](https://github.com/animate-css/animate.css)
 * [Bootstrap](https://getbootstrap.com/)
