@@ -59,6 +59,9 @@ Este projeto foi criando com:
     http://localhost:3000/
 ```
 
+<!-- VIDEO -->
+
+## Vídeo demonstrativo: [https://youtu.be/0mUoA7p38ec](click aqui)
 
 <!-- CONTACT -->
 ## Contact
