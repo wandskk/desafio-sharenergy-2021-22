@@ -18,6 +18,7 @@ const CustomerEdit = () => {
   const [name, setName] = React.useState('');
   const [usineId, setUsineId] = React.useState('');
   const [usinePercent, setUsinePercent] = React.useState('');
+
   const [msg, setMsg] = React.useState(null);
 
   async function getData() {

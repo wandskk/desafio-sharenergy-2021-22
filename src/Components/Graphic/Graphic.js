@@ -14,27 +14,6 @@ import SelectGraphic from './SelectGraphic';
 
 const Graphic = ({ data, setSelection }) => {
   const [select, setSelect] = React.useState('tensao_V');
-  const [currentUnit, setCurrentUnit] = React.useState('V');
-
-  React.useEffect(() => {
-    switch (select) {
-      case 'tensao_V':
-        setCurrentUnit('V');
-        break;
-      case 'corrente_A':
-        setCurrentUnit('A');
-        break;
-      case 'potencia_kW':
-        setCurrentUnit('kW');
-        break;
-      case 'temperatura_C':
-        setCurrentUnit('c°');
-        break;
-      default:
-        setCurrentUnit('V');
-        break;
-    }
-  }, [select]);
 
   React.useEffect(() => {
     setSelection(select);
