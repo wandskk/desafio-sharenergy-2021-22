@@ -61,7 +61,7 @@ Este projeto foi criando com:
 
 <!-- VIDEO -->
 
-## Vídeo demonstrativo: [https://youtu.be/0mUoA7p38ec](click aqui)
+## Vídeo demonstrativo: [click aqui](https://youtu.be/0mUoA7p38ec)
 
 <!-- CONTACT -->
 ## Contact
