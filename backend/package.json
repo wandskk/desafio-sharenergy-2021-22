@@ -8,7 +8,10 @@
     "dev": "nodemon src/index.js",
     "prisma": "prisma",
     "prisma:migrate": "prisma migrate dev --name init",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma migrate deploy",
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "express": "^4.18.0",
